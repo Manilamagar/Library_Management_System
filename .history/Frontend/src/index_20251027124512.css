@@ -1,3 +1,0 @@
-/* Tailwind v4 syntax: import preflight and include utilities. */
-@import "tailwindcss/preflight";
-@tailwind utilities;
