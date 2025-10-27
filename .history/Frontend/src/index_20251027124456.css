@@ -1,0 +1,4 @@
+/* Use Tailwind directive syntax so PostCSS + tailwindcss can generate styles. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
