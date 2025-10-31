@@ -3,7 +3,7 @@
 const bcrypt = require('bcryptjs');
 const { default: sequelize } = require('../Config/db');
 const { DataTypes } = require('sequelize');
-sequelize.sync({ force: true});
+
 
 const User = sequelize.define('User', {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
@@ -17,8 +17,6 @@ const User = sequelize.define('User', {
       user.password = await bcrypt.hash(user.password, 10);
     },
   },
-},{
-  timestamps: false,
 });
 
 User.prototype.validPassword = async function (password) {
