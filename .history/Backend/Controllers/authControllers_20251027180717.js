@@ -1,7 +1,7 @@
 // authController.js
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { User } = require('../Models/UsersModels.js'); // Ensure this is correct
+const { User } = require('../Models/serModels.js'); // Ensure this is correct
 require('dotenv').config();
 
 exports.register = async (req, res) => {

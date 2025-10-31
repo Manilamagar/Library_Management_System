@@ -1,8 +1,7 @@
 // backend/models/User.js
-
-const bcrypt = require('bcryptjs');
-const { default: sequelize } = require('../Config/db');
 const { DataTypes } = require('sequelize');
+const sequelize = require('../Config/db');
+const bcrypt = require('bcryptjs');
 
 const User = sequelize.define('User', {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },

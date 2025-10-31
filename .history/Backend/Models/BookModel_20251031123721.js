@@ -1,8 +1,5 @@
 // backend/models/Book.js
 
-const { DataTypes } = require("sequelize");
-const { default: sequelize } = require("../Config/db");
-
 
 const Book = sequelize.define('Book', {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },

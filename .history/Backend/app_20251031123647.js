@@ -12,7 +12,7 @@ app.use(cookieParser());
 
 const authRoutes = require('./Routes/authRoutes');
 const UsersRoutes = require('./Routes/UsersRoutes');
-const BookRoutes = require('./Routes/BookRoutes');
+const BooksRoutes = require('./Routes/BooksRoutes');
 const BorrowsRoutes = require('./Routes/BorrowsRoutes');
 
 
@@ -20,7 +20,7 @@ const BorrowsRoutes = require('./Routes/BorrowsRoutes');
 // Routes (we'll add later)
 app.use('/api/auth', authRoutes);
 app.use('/api/Users', UsersRoutes);
-app.use('/api/Book', BookRoutes);
+app.use('/api/Books', BookRoutes);
 app.use('/api/Borrows', BorrowsRoutes);
 
 

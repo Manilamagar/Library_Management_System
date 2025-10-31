@@ -1,6 +1,5 @@
 // backend/models/Book.js
 
-const { DataTypes } = require("sequelize");
 const { default: sequelize } = require("../Config/db");
 
 

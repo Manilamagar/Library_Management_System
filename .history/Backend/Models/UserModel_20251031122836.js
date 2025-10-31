@@ -1,15 +1,14 @@
 // backend/models/User.js
-
-const bcrypt = require('bcryptjs');
-const { default: sequelize } = require('../Config/db');
 const { DataTypes } = require('sequelize');
+const sequelize = require('../Config/db');
+const bcrypt = require('bcryptjs');
 
 const User = sequelize.define('User', {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
   username: { type: DataTypes.STRING, unique: true, allowNull: false },
   email: { type: DataTypes.STRING, unique: true, allowNull: false },
   password: { type: DataTypes.STRING, allowNull: false },
-  role: { type: DataTypes.ENUM('Admin', 'Librarian', 'Student'), allowNull: false },
+  role: { type: DataTypes.ENUM('Admin', 'Librarian', ''U), allowNull: false },
 }, {
   hooks: {
     beforeCreate: async (user) => {

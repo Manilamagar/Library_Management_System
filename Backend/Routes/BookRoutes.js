@@ -4,7 +4,7 @@ const router = express.Router();
 const { protect, authorize } = require('../Middleware/authMiddleware');
 const Book = require('../Models/BookModel');
 
-router.get('/', protect, async (req, res) => {
+router.get('/', protect, async (req, res) =>{
   const books = await Book.findAll();
   res.json(books);
 });

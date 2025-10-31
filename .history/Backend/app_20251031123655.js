@@ -12,7 +12,7 @@ app.use(cookieParser());
 
 const authRoutes = require('./Routes/authRoutes');
 const UsersRoutes = require('./Routes/UsersRoutes');
-const BookRoutes = require('./Routes/BookRoutes');
+const BooksRoutes = require('./Routes/BookRoutes');
 const BorrowsRoutes = require('./Routes/BorrowsRoutes');
 
 

@@ -1,8 +1,6 @@
 // backend/models/Borrow.js
 const { default: sequelize } = require('../Config/db');
 const { DataTypes } = require('sequelize');
-const User = require('./UserModel');
-const Book = require('./BookModel');
 
 const Borrow = sequelize.define('Borrow', {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
