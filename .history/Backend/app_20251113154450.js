@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
 });
 // GET route to show register page
 app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "register.html"));
+  res.render(path.join(__dirname, "public", "register.html"));
 });
 
 // POST route to save registration

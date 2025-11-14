@@ -44,22 +44,6 @@ app.get('/', (req, res) => {
 app.get("/", (req, res) => {
     res.render("");
 });
-// GET route to show register page
-app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "register.html"));
-});
-
-// POST route to save registration
-app.post("/register", (req, res) => {
-  const { username, email, password } = req.body;
-
-  const sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-  db.query(sql, [username, email, password], (err, result) => {
-    if (err) throw err;
-    console.log("User registered:", result);
-    res.send("✅ Registration successful!");
-  });
-});
 
 
 
