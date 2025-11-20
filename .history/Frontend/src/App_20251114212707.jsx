@@ -31,7 +31,8 @@ function App() {
         <Route path='/UserModel' element={<UserModal/>}/>
         <Route path='/Books' element={<Books/>}/>
 
-        
+        <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
 
           {/* User Routes */}
           <Route

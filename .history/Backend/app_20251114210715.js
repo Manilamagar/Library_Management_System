@@ -1,0 +1,73 @@
+const express = require ('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser');
+const mysql = require('mysql2');
+const path = require('path');
+
+const app= express();
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Serve static files (like HTML)
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use(cors());
+app.use(express.json());
+app.use(cookieParser());
+
+const authRoutes = require('./Routes/authRoutes');
+const UsersRoutes = require('./Routes/UserRoutes');
+const BookRoutes = require('./Routes/BookRoutes');
+const BorrowsRoutes = require('./Routes/BorrowRoutes');
+
+
+
+// Routes (we'll add later)
+app.use('/api/auth', authRoutes);
+app.use('/api/Users', UsersRoutes);
+app.use('/api/Book', BookRoutes);
+app.use('/api/Borrows', BorrowsRoutes);
+
+dotenv.config();
+
+
+app.get('/', (req, res) => {
+    res.send('Welcome to the INC Pustakalaya API');
+});
+app.get("/", (req, res) => {
+    res.render("");
+});
+// GET route to show register page
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "register.html"));
+});
+
+// POST route to save registration
+app.post("/api/register", async (req, res) => {
+  const { name, email, password, role } = req.body;
+
+  if (!name || !email || !password || !role) {
+    return res.status(400).json({ message: "All fields required" });
+  }
+
+  try {
+    const exists = await Users.findOne({ where: { email } });
+    if (exists) return res.status(400).json({ message: "Email already exists" });
+
+    await Users.create({ name, email, password, role });
+    res.json({ message: "User registered successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Error registering user" });
+  }
+});
+
+
+
+
+app.listen(3002,(req,res)=>{
+    console.log("Server is running on port 3002");
+})

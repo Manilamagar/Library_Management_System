@@ -28,10 +28,11 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/studentdashboard' element={<StudentDashboard/>}/>
         <Route path='/BookCard' element={<BookCard/>}/>
-        <Route path='/UserModel' element={<UserModal/>}/>
+        <Route path='/UserModel' element={<UserModa/>}/>
         <Route path='/Books' element={<Books/>}/>
 
-        
+        <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
 
           {/* User Routes */}
           <Route

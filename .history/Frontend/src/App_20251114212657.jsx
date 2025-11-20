@@ -5,7 +5,7 @@ import Login from './Pages/Login'
 import Home from './Pages/Home'
 import Register from './Pages/Register'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { useAuth } from './Context/AuthContext'
+import { useAuth } from './ontext/AuthContext'
 import BookCard from './Shared/BookCard'
 import UserModal from './Shared/UserModal.jsx'
 import Books from './Pages/Books.jsx'
@@ -31,7 +31,8 @@ function App() {
         <Route path='/UserModel' element={<UserModal/>}/>
         <Route path='/Books' element={<Books/>}/>
 
-        
+        <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
 
           {/* User Routes */}
           <Route

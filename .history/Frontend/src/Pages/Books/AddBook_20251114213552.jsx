@@ -18,10 +18,7 @@ const AddBook = () => {
       await axios.post("http://localhost:3002/api/books", book);
       setMsg("Book added successfully!");
       setBook({ title: "", author: "", isbn: "", quantity: "" });
-    } catch (error) {
-      console.error(error);
-      setMsg("Failed to add book. Please try again.");
-    }
+    } 
   };
 
   return (
