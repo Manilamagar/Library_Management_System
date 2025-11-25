@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {Switch, Route, Redirect, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect, Routes, BrowserRouter } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import Signin from "./Pages/Signin";
@@ -13,7 +13,7 @@ function App() {
   const { user } = useContext(AuthContext);
 
   return (
-    <BrowserRouter>
+    <
     <Routes>
       <Header />
 
